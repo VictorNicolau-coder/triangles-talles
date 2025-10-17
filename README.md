@@ -3,5 +3,4 @@
 <ul>
     <li>Victor</li>
 </ul>
-<a href="https://judge.beecrowd.com/en/problems/view/1472"></a>
-<b>Problema 1472</b>
+<a href="https://judge.beecrowd.com/en/problems/view/1472"><b>Problema 1472</b></a>
