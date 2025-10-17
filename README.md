@@ -1,6 +1,31 @@
-<h1>Triangles - Problem 1472</h1>
-<h3><b>Equipe:</b><h3>
-<ul>
-    <li>Victor</li>
-</ul>
-<a href="https://judge.beecrowd.com/en/problems/view/1472"><b>Problema 1472</b></a>
+# Triangles - 1472
+
+Resolução para problema [1472]("https://judge.beecrowd.com/en/problems/view/1472") encontrado no site beecrowd.
+
+## Problema
+
+São dados N pontos em uma circunferência. Você deve escrever um programa que determine quantos triângulos equiláteros distintos podem ser construídos usando esses pontos como vértices.
+
+A figura abaixo ilustra um exemplo; (a) mostra um conjunto de pontos, determinados pelos comprimentos dos arcos de circunferência que têm pontos adjacentes como extremos, e (b) mostra os dois triângulos que podem ser construídos com esses pontos.
+
+### Entrada
+
+A entrada contém vários casos de teste. A primeira linha de cada caso de teste contém um número inteiro N ( 3 ≤ N ≤ 105), o número de pontos dados. A segunda linha contém N inteiros Xi (1 ≤ Xi ≤ 103) para 1 ≤ i ≤ N, representando os comprimentos dos arcos entre dois pontos consecutivos na circunferˆencia: para 1 ≤ i ≤ (N − 1), Xi representa o comprimento do arco entre os pontos i e i + 1; XN representa o comprimento do arco entre os pontos N e 1. O final da entrada é determinado por EOF (fim de arquivo).
+
+### Saída
+
+Seu programa deve produzir uma única linha para cada caso de teste, contendo um único inteiro, o número de triângulos equiláteros distintos que podem ser construídos utilizando os pontos dados como vértices.
+
+Exemplo Entrada
+```bash
+8
+4 2 4 2 2 6 2 2
+6
+3 4 2 1 5 3
+```
+
+Exemplo Saída
+```bash
+2
+1
+```
