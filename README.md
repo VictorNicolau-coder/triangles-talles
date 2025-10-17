@@ -1,6 +1,6 @@
 # Triangles - 1472
 
-Resolução para [problema 1472](https://judge.beecrowd.com/en/problems/view/1472) encontrado no site beecrowd.
+Resolução para problema [1472](https://judge.beecrowd.com/en/problems/view/1472) encontrado no site beecrowd.
 
 ## Problema
 
@@ -29,4 +29,5 @@ Exemplo Saída
 2
 1
 ```
+
 
