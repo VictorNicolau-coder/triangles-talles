@@ -1,71 +1,61 @@
 import java.util.*;
-import java.util.stream.IntStream;
 
 public class App {
 
     public static void main(String[] args) throws Exception {
         Scanner in = new Scanner(System.in);
-        int size_array, ultimo_indice;
-        int t_count = 0;
         
-        //Requesting size array
-        size_array = in.nextInt();
-        ultimo_indice = size_array-1;
-        int[] circle = new int[size_array];
-        int[] circle_copy = new int[size_array];
-        
-        //Flling array size
-        int i;
-        for(i = 0; i < size_array; i++)
-            circle[i] = in.nextShort();
-        
-        int sum = 0;
-        //How many triangles are inside the circle?
+        while (in.hasNextInt()) {
+            int size_array;
+            int t_count = 0;
+            
+            //Solicitando tamanho array
+            size_array = in.nextInt();
+            int[] circle = new int[size_array];
+            
+            //Preenchendo array
+            int i;
+            int sum_array = 0;
+            for(i = 0; i < size_array; i++) {
+                circle[i] = in.nextInt();
+                sum_array += circle[i];
+            }
+            
+            //Para se formar um triangulo devem ser cumpridos 3 requisitos:
+            //  A soma das distâncias entre os pontos deve ser impar
+            //  A quantidade de pontos deve ser maior que 2
+            //  A distancia entre os pontos deve ser igual
+            
+            if (sum_array % 3 == 0 && size_array > 2){
+                int size_side = sum_array/3;
 
-        for (i = 0; i < size_array; i++) {
+                for (i = 0; i < size_array; i++) {
 
-            int k = i;
-            for (int j = 0; j < size_array; j++) {
-
-                sum += circle[k];
-                circle_copy[k] = circle[k];
-                
-                if (sum % 18 == 0){    
-                    //Quantidade de elementos entre ponto incial e final é divisivel por 3?
-                    System.out.println("Taa");
-                    if (circle_copy.length % 3 == 0){
-                        int size_array_sec = circle_copy.length / 3;
-
-                        int arr_a[] = new int[size_array_sec];
-                        int arr_b[] = new int[size_array_sec];
-                        int arr_c[] = new int[size_array_sec];
+                    int sum = 0;
+                    int p_count = 0;
+                    int k = i;
+                    
+                    for (int j = 0; j < size_array; j++) {
+                        sum += circle[k];
                         
-                        System.arraycopy(circle_copy, 0, arr_a, 0, size_array_sec);
-                        System.arraycopy(circle_copy, size_array_sec, arr_b, 0, size_array_sec);
-                        System.arraycopy(circle_copy, size_array_sec*2, arr_c, 0, size_array_sec);
-                        
-                        int soma_a = IntStream.of(arr_a).sum();
-                        int soma_b = IntStream.of(arr_b).sum();
-                        int soma_c = IntStream.of(arr_c).sum();
-                        
-                        if (soma_a == soma_b && soma_b == soma_c) t_count++;
+                        if (sum % size_side == 0) p_count++;
+
+                        k++;
+                        if (k > size_array - 1) k = 0;
                     }
                     
-                    System.out.println("inicial point: " + i);
-                    System.out.println("final point: " + k);
+                    if (p_count == 3) t_count++;
                 }
 
-                k++;
-                if (k == ultimo_indice) k = 0;
+                //Para cada triangulo haverão três pontos
+                //significa então que para cada aparição de um triangulo terão outros dois aparecendo
+                System.out.println(t_count/3);
+            } else {
+                System.out.println(0);
             }
-
-            System.out.println("soma = " + sum);
-            sum = 0;
-            Arrays.fill(circle_copy, 0);
-
         }
 
-        System.out.println(t_count);
+        in.close();
     }
 
 }
