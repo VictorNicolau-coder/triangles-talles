@@ -24,7 +24,7 @@ public class App {
             //Para se formar um triangulo devem ser cumpridos 3 requisitos:
             //  A soma das distâncias entre os pontos deve ser impar
             //  A quantidade de pontos deve ser maior que 2
-            //  A distancia entre os pontos deve ser igual
+            //  A distancia entre os pontos devem ser iguais
             
             if (sum_array % 3 == 0 && size_array > 2){
                 int size_side = sum_array/3;
