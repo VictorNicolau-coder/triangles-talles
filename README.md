@@ -5,7 +5,6 @@ Resolução para problema [1472](https://judge.beecrowd.com/en/problems/view/147
 ## Problema
 
 São dados N pontos em uma circunferência. Você deve escrever um programa que determine quantos triângulos equiláteros distintos podem ser construídos usando esses pontos como vértices.
-
 A figura abaixo ilustra um exemplo; (a) mostra um conjunto de pontos, determinados pelos comprimentos dos arcos de circunferência que têm pontos adjacentes como extremos, e (b) mostra os dois triângulos que podem ser construídos com esses pontos.
 
 ### Entrada
@@ -27,5 +26,5 @@ Exemplo Entrada
 Exemplo Saída
 ```bash
 2
-1
-```
+1
+```
